@@ -15,20 +15,15 @@ const assignment = {};
  * @returns number the sum of the numbers from 1 to destination
  */
 function sumOfNumbersTo(destination) {
-    if (typeof destination !== 'number' || destination <= 1) {
-        throw new Error('destination parameters must be a number and be greater than 1');
-    }
-
     let sum = 0;
     for (let i = 1; i <= destination; i++) {
-        sum += i;
-        console.log(`Sum after adding ${i} is ${sum}`);
+        sum += i
     }
-
-    return sum;
+    return sum
 }
 
-sumOfNumbersTo(10);
+
+assignment.sumOfNumbersTo = sumOfNumbersTo;
 
 /**
  * Challenge - 2
@@ -41,36 +36,31 @@ sumOfNumbersTo(10);
  * @returns the object containing count, sum, arrayOfEvenNumbers from 1 to destination
  */
 function countEvenNumbersWithin(destination) {
-    // here is the code
-    if (typeof destination !== 'number' || destination <= 1) {
-        throw new Error (
-            'destination parameters must be a number and be more than 1'
-        );
-    
-    }
+    // Write your code here
+    // get the number from 1 to destination
     let sum = 0;
     let count = 0;
     let arrayOfEvenNumbers = [];
-
     for (let i = 1; i <= destination; i++) {
         if (i % 2 === 0) {
             sum += i;
             count++;
-            arrayOfEvenNumbers.push(i);
+            arrayOfEvenNumbers.push(i)
         }
     }
 
-const finalAnswers =  {
-    count,
-    sum,
-    arrayOfEvenNumbers
+    return {
+        // property value shorthand
+        // when the property name and the value name are the same
+        // you can just write the property name in your object
+        count,
+        sum,
+        arrayOfEvenNumbers
+    };
 }
-return finalAnswers;
-}
-
-countEvenNumbersWithin(20);
 
 
+assignment.countEvenNumbersWithin = countEvenNumbersWithin;
 
 /**
  * Challenge - 3
@@ -88,18 +78,19 @@ countEvenNumbersWithin(20);
  * @returns Array the converted temperatures in Fahrenheit
  */
 function celsiusToFahrenheit(arrayOfNumbers) {
-
+    
     let result = [];
-
     for (let i = 0; i < arrayOfNumbers.length; i++) {
-        let Fahrenheit = (Math.trunc(arrayOfNumbers[i] * 1.8 + 32)); 
-        result.push(Fahrenheit);       
-        console.log(`${arrayOfNumbers} celsius is ${Fahrenheit} Fahrenheit`);  
+        let fahrenheit = Math.trunc(arrayOfNumbers[i] * 9 / 5 + 32);
+        result.push(fahrenheit);
     }
+
     return result;
 }
 
-console.log(celsiusToFahrenheit([5,10,15,20,25,30])); 
+
+assignment.celsiusToFahrenheit = celsiusToFahrenheit;
+
 
 
 // ========================
